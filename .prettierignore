@@ -1,0 +1,10 @@
+# Ignored by prettier
+node_modules
+.next
+out
+build
+dist
+.git
+.vscode
+*.log
+*.json.bak

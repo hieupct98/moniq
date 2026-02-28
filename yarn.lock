@@ -1218,7 +1218,7 @@ debug@^3.2.7:
   dependencies:
     ms "^2.1.1"
 
-debug@^4.1.0, debug@^4.3.1, debug@^4.3.2, debug@^4.4.0, debug@^4.4.3:
+debug@^4.1.0, debug@^4.3.1, debug@^4.3.2, debug@^4.4.0, debug@^4.4.1, debug@^4.4.3:
   version "4.4.3"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.4.3.tgz#c6ae432d9bd9662582fce08709b038c58e9e3d6a"
   integrity sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==
@@ -1437,6 +1437,14 @@ eslint-config-next@16.1.6:
     globals "16.4.0"
     typescript-eslint "^8.46.0"
 
+eslint-import-context@^0.1.8:
+  version "0.1.9"
+  resolved "https://registry.yarnpkg.com/eslint-import-context/-/eslint-import-context-0.1.9.tgz#967b0b2f0a90ef4b689125e088f790f0b7756dbe"
+  integrity sha512-K9Hb+yRaGAGUbwjhFNHvSmmkZs9+zbuoe3kFQ4V1wYjrepUFYM2dZAfNtjbbj3qsPfUfsA68Bx/ICWQMi+C8Eg==
+  dependencies:
+    get-tsconfig "^4.10.1"
+    stable-hash-x "^0.2.0"
+
 eslint-import-resolver-node@^0.3.6, eslint-import-resolver-node@^0.3.9:
   version "0.3.9"
   resolved "https://registry.yarnpkg.com/eslint-import-resolver-node/-/eslint-import-resolver-node-0.3.9.tgz#d4eaac52b8a2e7c3cd1903eb00f7e053356118ac"
@@ -1458,6 +1466,19 @@ eslint-import-resolver-typescript@^3.5.2:
     stable-hash "^0.0.5"
     tinyglobby "^0.2.13"
     unrs-resolver "^1.6.2"
+
+eslint-import-resolver-typescript@^4.4.4:
+  version "4.4.4"
+  resolved "https://registry.yarnpkg.com/eslint-import-resolver-typescript/-/eslint-import-resolver-typescript-4.4.4.tgz#3e83a9c25f4a053fe20e1b07b47e04e8519a8720"
+  integrity sha512-1iM2zeBvrYmUNTj2vSC/90JTHDth+dfOfiNKkxApWRsTJYNrc8rOdxxIf5vazX+BiAXTeOT0UvWpGI/7qIWQOw==
+  dependencies:
+    debug "^4.4.1"
+    eslint-import-context "^0.1.8"
+    get-tsconfig "^4.10.1"
+    is-bun-module "^2.0.0"
+    stable-hash-x "^0.2.0"
+    tinyglobby "^0.2.14"
+    unrs-resolver "^1.7.11"
 
 eslint-module-utils@^2.12.1:
   version "2.12.1"
@@ -1788,7 +1809,7 @@ get-symbol-description@^1.1.0:
     es-errors "^1.3.0"
     get-intrinsic "^1.2.6"
 
-get-tsconfig@^4.10.0:
+get-tsconfig@^4.10.0, get-tsconfig@^4.10.1:
   version "4.13.6"
   resolved "https://registry.yarnpkg.com/get-tsconfig/-/get-tsconfig-4.13.6.tgz#2fbfda558a98a691a798f123afd95915badce876"
   integrity sha512-shZT/QMiSHc/YBLxxOkMtgSid5HFoauqCE3/exfsEcwg1WkeqjG+V40yBbBrsD+jW2HDXcs28xOfcbm2jI8Ddw==
@@ -2589,6 +2610,16 @@ prelude-ls@^1.2.1:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.2.1.tgz#debc6489d7a6e6b0e7611888cec880337d316396"
   integrity sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==
 
+prettier-plugin-tailwindcss@^0.7.2:
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-tailwindcss/-/prettier-plugin-tailwindcss-0.7.2.tgz#8de2039fc0363b8532ef5a2d3fc9e2c1b6ca3bd4"
+  integrity sha512-LkphyK3Fw+q2HdMOoiEHWf93fNtYJwfamoKPl7UwtjFQdei/iIBoX11G6j706FzN3ymX9mPVi97qIY8328vdnA==
+
+prettier@^3.8.1:
+  version "3.8.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.8.1.tgz#edf48977cf991558f4fcbd8a3ba6015ba2a3a173"
+  integrity sha512-UOnG6LftzbdaHZcKoPFtOcCKztrQ57WkHDeRD9t/PTQtmT0NHSeWWepj6pS0z/N7+08BHFDQVUrfmfMRcZwbMg==
+
 prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
@@ -2859,6 +2890,11 @@ source-map-js@^1.0.2, source-map-js@^1.2.1:
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.2.1.tgz#1ce5650fddd87abc099eda37dcff024c2667ae46"
   integrity sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==
 
+stable-hash-x@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/stable-hash-x/-/stable-hash-x-0.2.0.tgz#dfd76bfa5d839a7470125c6a6b3c8b22061793e9"
+  integrity sha512-o3yWv49B/o4QZk5ZcsALc6t0+eCelPc44zZsLtCQnZPDwFpDYSWcDnrv2TtMmMbQ7uKo3J0HTURCqckw23czNQ==
+
 stable-hash@^0.0.5:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/stable-hash/-/stable-hash-0.0.5.tgz#94e8837aaeac5b4d0f631d2972adef2924b40269"
@@ -2979,7 +3015,7 @@ tapable@^2.3.0:
   resolved "https://registry.yarnpkg.com/tapable/-/tapable-2.3.0.tgz#7e3ea6d5ca31ba8e078b560f0d83ce9a14aa8be6"
   integrity sha512-g9ljZiwki/LfxmQADO3dEY1CbpmXT5Hm2fJ+QaGKwSXUylMybePR7/67YW7jOrrvjEgL1Fmz5kzyAjWVWLlucg==
 
-tinyglobby@^0.2.13, tinyglobby@^0.2.15:
+tinyglobby@^0.2.13, tinyglobby@^0.2.14, tinyglobby@^0.2.15:
   version "0.2.15"
   resolved "https://registry.yarnpkg.com/tinyglobby/-/tinyglobby-0.2.15.tgz#e228dd1e638cea993d2fdb4fcd2d4602a79951c2"
   integrity sha512-j2Zq4NyQYG5XMST4cbs02Ak8iJUdxRM0XI5QyxXuZOzKOINmWurp3smXu3y5wDcJrptwpSjgXHzIQxR0omXljQ==
@@ -3096,7 +3132,7 @@ undici-types@~6.21.0:
   resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-6.21.0.tgz#691d00af3909be93a7faa13be61b3a5b50ef12cb"
   integrity sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==
 
-unrs-resolver@^1.6.2:
+unrs-resolver@^1.6.2, unrs-resolver@^1.7.11:
   version "1.11.1"
   resolved "https://registry.yarnpkg.com/unrs-resolver/-/unrs-resolver-1.11.1.tgz#be9cd8686c99ef53ecb96df2a473c64d304048a9"
   integrity sha512-bSjt9pjaEBnNiGgc9rUiHGKv5l4/TGzDmYw3RhnkJGtLhbnnA/5qJj7x3dNDCRx/PJxu774LlH8lCOlB4hEfKg==
