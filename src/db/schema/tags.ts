@@ -2,18 +2,12 @@ import { pgTable, text, timestamp, uuid } from "drizzle-orm/pg-core";
 
 import { profiles } from "./profiles";
 
-/**
- * Categories - income/expense categories
- * System defaults have user_id = null
- * Users can create custom categories
- */
-export const categories = pgTable("categories", {
+export const tags = pgTable("tags", {
   id: uuid("id").primaryKey().defaultRandom(),
   userId: uuid("user_id").references(() => profiles.id, {
     onDelete: "cascade",
   }),
   name: text("name").notNull(),
-  icon: text("icon").notNull(), // library icon key, e.g. "shopping-bag"
-  color: text("color").notNull(), // hex e.g. "#FF5733"
+  color: text("color").notNull(),
   createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
 });

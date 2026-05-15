@@ -4,10 +4,11 @@ import { transactionService } from "@/services/transaction.service";
 
 export async function GET(
   _req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const transaction = await transactionService.findById(params.id);
+    const { id } = await params;
+    const transaction = await transactionService.findById(id);
 
     if (!transaction) {
       return NextResponse.json(

@@ -57,16 +57,27 @@ yarn drizzle-kit push
 
 ## 6. Seed Default Categories (Optional)
 
-Once tables are created, you may want to seed default income/expense categories:
+Once tables are created, you may want to seed default categories:
 
 ```sql
-INSERT INTO categories (id, user_id, name, icon, color, type, created_at)
+INSERT INTO categories (id, user_id, name, icon, color, created_at)
 VALUES
-  ('550e8400-e29b-41d4-a716-446655440001', NULL, 'Salary', '💰', '#10B981', 'income', now()),
-  ('550e8400-e29b-41d4-a716-446655440002', NULL, 'Bonus', '🎉', '#3B82F6', 'income', now()),
-  ('550e8400-e29b-41d4-a716-446655440003', NULL, 'Groceries', '🛒', '#F59E0B', 'expense', now()),
-  ('550e8400-e29b-41d4-a716-446655440004', NULL, 'Entertainment', '🍜', '#EC4899', 'expense', now()),
-  ('550e8400-e29b-41d4-a716-446655440005', NULL, 'Transport', '🚕', '#8B5CF6', 'expense', now());
+  ('550e8400-e29b-41d4-a716-446655440001', NULL, 'Lương', 'banknote', '#10B981', now()),
+  ('550e8400-e29b-41d4-a716-446655440002', NULL, 'Ăn uống', 'utensils', '#F59E0B', now()),
+  ('550e8400-e29b-41d4-a716-446655440003', NULL, 'Di chuyển', 'car-taxi-front', '#38BDF8', now()),
+  ('550e8400-e29b-41d4-a716-446655440004', NULL, 'Mua sắm', 'shopping-bag', '#22C55E', now()),
+  ('550e8400-e29b-41d4-a716-446655440005', NULL, 'Chăm sóc sức khỏe', 'briefcase-medical', '#E11D48', now());
+```
+
+Default tags can be seeded separately:
+
+```sql
+INSERT INTO tags (id, user_id, name, color, created_at)
+VALUES
+  ('660e8400-e29b-41d4-a716-446655440001', NULL, 'Khác', '#94A3B8', now()),
+  ('660e8400-e29b-41d4-a716-446655440002', NULL, 'Baby', '#38BDF8', now()),
+  ('660e8400-e29b-41d4-a716-446655440003', NULL, 'Lương', '#10B981', now()),
+  ('660e8400-e29b-41d4-a716-446655440004', NULL, 'Nhà', '#F59E0B', now());
 ```
 
 ## 7. Test Connection

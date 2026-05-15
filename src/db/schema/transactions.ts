@@ -1,6 +1,6 @@
 import {
   bigint,
-  date,
+  index,
   pgTable,
   text,
   timestamp,
@@ -23,9 +23,15 @@ export const transactions = pgTable("transactions", {
   categoryId: uuid("category_id")
     .references(() => categories.id, { onDelete: "restrict" })
     .notNull(),
-  amount: bigint("amount", { mode: "number" }).notNull(), // stored as VND, no decimals
+  occurredAt: timestamp("occurred_at", { withTimezone: true })
+    .notNull()
+    .defaultNow(),
   type: transactionTypeEnum("type").notNull(),
-  date: date("date", { mode: "string" }).notNull(), // YYYY-MM-DD format
   note: text("note"),
+  label: text("label"),
+  amount: bigint("amount", { mode: "number" }).notNull(), // Absolute integer VND, no decimals
   createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
-});
+}, table => [
+  index("transactions_user_occurred_at_idx").on(table.userId, table.occurredAt),
+  index("transactions_category_idx").on(table.categoryId),
+]);

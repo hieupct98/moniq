@@ -1,18 +1,9 @@
-export type TransactionType = "income" | "expense";
+import type { InferInsertModel, InferSelectModel } from "drizzle-orm";
 
-export interface Transaction {
-  id: string;
-  title: string;
-  amount: number;
-  type: TransactionType;
-  category: string;
-  date: string;
-}
+import { transactions } from "@/db/schema";
 
-export interface CreateTransactionDto {
-  title: string;
-  amount: number;
-  type: TransactionType;
-  category: string;
-  date: string;
-}
+export type Transaction = InferSelectModel<typeof transactions>;
+export type CreateTransactionDto = Pick<
+  InferInsertModel<typeof transactions>,
+  "userId" | "categoryId" | "occurredAt" | "type" | "note" | "label" | "amount"
+>;

@@ -11,9 +11,5 @@ export const authUsers = pgTable(
     id: uuid("id").primaryKey(),
     email: text("email").notNull().unique(),
     createdAt: timestamp("created_at", { withTimezone: true }),
-  },
-  table => ({
-    // Note: This table is in the 'auth' schema in Supabase
-    // Configure the schema in drizzle.config.ts
-  })
+  }
 );
