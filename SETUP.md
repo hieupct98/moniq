@@ -8,7 +8,7 @@ Next.js 16 · TypeScript · Tailwind · Drizzle ORM · Supabase · Vercel
 
 | Layer | Tool |
 |---|---|
-| UI | Next.js 16 App Router, Tailwind, shadcn/ui |
+| UI | Next.js 16 App Router, Tailwind |
 | Data fetching (FE) | React Query + Axios |
 | API | Next.js API routes (`app/api/`) |
 | Business logic | Service layer (`services/`) |
@@ -30,7 +30,7 @@ src/
 │   └── providers.tsx        ← React Query provider
 │
 ├── components/
-│   ├── ui/                  ← shadcn/ui primitives
+│   ├── ui/                  ← reusable UI primitives
 │   └── [feature]/           ← feature components
 │
 ├── db/
@@ -84,9 +84,10 @@ profiles        id, display_name, avatar_url
   ↓
 categories      id, user_id (null = system default), name, icon, color, type
   ↓
-transactions    id, user_id, category_id, amount (bigint VND), type, date, note
+transactions    id, user_id, category_id, description, amount (bigint VND), type, date, note
 ```
 
 - `amount` is `bigint` — VND has no decimals, never use float for money
 - `date` is `date` not `timestamptz` — user picks a day, no time needed
 - `user_id` on categories is nullable — system defaults have `null`, custom ones reference the user
+- Cashback/refund fields are intentionally not part of MoniQ's transaction model

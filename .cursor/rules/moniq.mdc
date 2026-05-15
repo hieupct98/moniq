@@ -1,0 +1,6 @@
+---
+description: MoniQ project context and implementation rules
+alwaysApply: true
+---
+
+Read `AGENTS.md` before editing MoniQ. It is the canonical context for product scope, VND-only money rules, architecture, data flow, UI direction, and verification commands.
